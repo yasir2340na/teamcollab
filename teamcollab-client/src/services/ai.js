@@ -1,4 +1,4 @@
-// services/ai.js
+
 const FALLBACK = [
   'Initialize project repository',
   'Design UI wireframes',
