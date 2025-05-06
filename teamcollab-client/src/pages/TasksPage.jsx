@@ -7,7 +7,9 @@ import api from '../services/api';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const socket = io('http://localhost:5000');
+const socket = io(import.meta.env.VITE_API_URL);
+
+
 
 export default function TasksPage() {
   // ▼▼▼ ORIGINAL LOGIC STARTS ▼▼▼
