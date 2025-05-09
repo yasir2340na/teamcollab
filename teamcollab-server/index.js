@@ -54,5 +54,5 @@ app.get('/api/hello', (req, res) => {
 
 // Start the WebSocket + HTTP server
 server.listen(PORT, () => {
-  console.log(`🚀 API listening on http://localhost:${PORT}`);
+  console.log(`🚀 API listening on http://localhost:${5000}`);
 });
