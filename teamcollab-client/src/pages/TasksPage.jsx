@@ -7,7 +7,7 @@ import api from '../services/api';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const socket = io(import.meta.env.VITE_API_URL);
+const socket = io('https://teamcollab-1m84.onrender.com');
 
 
 
