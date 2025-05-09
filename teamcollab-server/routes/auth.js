@@ -1,4 +1,3 @@
-// routes/auth.js
 const express = require('express');
 const bcrypt  = require('bcryptjs');
 const jwt     = require('jsonwebtoken');
@@ -10,6 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'replace_this_secret';
 // @route   POST /api/auth/signup
 // @desc    Register new user
 router.post('/signup', async (req, res) => {
+  console.log('Signup Route Hit'); // Log when the route is hit
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
     return res.status(400).json({ msg: 'All fields required' });
@@ -31,6 +31,7 @@ router.post('/signup', async (req, res) => {
 // @route   POST /api/auth/login
 // @desc    Authenticate user & get token
 router.post('/login', async (req, res) => {
+  console.log('Login Route Hit'); // Log when the route is hit
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ msg: 'All fields required' });

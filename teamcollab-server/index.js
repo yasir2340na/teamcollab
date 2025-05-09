@@ -1,4 +1,3 @@
-// index.js
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -24,7 +23,8 @@ const server = http.createServer(app);
 // ✅ Allowed origins list
 const allowedOrigins = [
   'https://teamcollab-3261.vercel.app',       // Production frontend
-  /\.vercel\.app$/                             // All Vercel preview URLs
+  /\.vercel\.app$/,                          // All Vercel preview URLs
+  'https://teamcollab-1m84.onrender.com',    // Ensure this is in allowedOrigins
 ];
 
 // ✅ CORS middleware for Express
@@ -41,6 +41,7 @@ app.use(cors({
   },
   credentials: true
 }));
+
 app.use(express.json());
 
 // ✅ Socket.IO setup with matching CORS config
