@@ -24,7 +24,8 @@ import {
 import TaskCommentsModal from '../components/TaskCommentsModal';
 import ActivityFeed from '../components/ActivityFeed';
 
-const socket = io('http://localhost:5000');
+const SOCKET_URL = import.meta.env.VITE_API_URL?.replace('/api', '') || 'https://teamcollab-1-gbpq.onrender.com';
+const socket = io(SOCKET_URL);
 
 export default function TasksPage() {
   const { projectId } = useParams();
