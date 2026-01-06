@@ -26,7 +26,12 @@ const http = require('http');
 const { Server } = require('socket.io');
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: '*' }
+  cors: { 
+    origin: [
+      'http://localhost:5173',
+      'https://teamcollab-alpha.vercel.app'
+    ]
+  }
 });
 
 // Inject io to every request
@@ -36,7 +41,13 @@ app.use((req, res, next) => {
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://teamcollab-alpha.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // API Routes
