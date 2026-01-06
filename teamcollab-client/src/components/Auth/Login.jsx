@@ -45,7 +45,8 @@ export default function Login() {
               try {
                 const res = await api.post('/auth/login', values);
                 localStorage.setItem('token', res.data.token);
-                nav('/');
+                // Force reload to ensure App.jsx picks up the token
+                window.location.href = '/dashboard';
               } catch (err) {
                 setErrors({ email: 'Invalid credentials' });
               } finally {

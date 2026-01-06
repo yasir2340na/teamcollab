@@ -42,9 +42,16 @@ export default function Signup() {
             validationSchema={signupSchema}
             onSubmit={async (values, { setSubmitting, setErrors }) => {
               try {
-                await api.post('/auth/signup', values); // no token handling here
-                alert("Account created successfully. Please login.");
-                nav('/login'); // go to login page
+                const res = await api.post('/auth/signup', values);
+                // If backend returns token on signup, use it directly
+                if (res.data.token) {
+                  localStorage.setItem('token', res.data.token);
+                  window.location.href = '/dashboard';
+                } else {
+                  // Otherwise redirect to login
+                  alert("Account created successfully. Please login.");
+                  nav('/login');
+                }
               } catch (err) {
                 setErrors({ email: 'Email already exists' });
               } finally {
