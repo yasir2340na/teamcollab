@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { ClockIcon, UserCircleIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import api from '../services/api';
