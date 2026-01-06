@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import TasksPage from './pages/TasksPage';
 import Login from './components/Auth/Login';
@@ -37,12 +38,13 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Enhanced Navbar with glassmorphism */}
+      {/* Enhanced Navbar with glassmorphism - Only show on authenticated routes */}
+      {isLoggedIn && (
       <nav className="sticky top-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link to="/">
+            <Link to="/dashboard">
               <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -64,7 +66,7 @@ function App() {
                 <>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link 
-                      to="/" 
+                      to="/dashboard" 
                       className="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-white/20 text-white transition-all duration-300"
                     >
                       <HomeIcon className="h-5 w-5" />
@@ -170,12 +172,30 @@ function App() {
           )}
         </AnimatePresence>
       </nav>
+      )}
 
       <main className="flex-1">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route
               path="/"
+              element={
+                !isLoggedIn ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <LandingPage />
+                  </motion.div>
+                ) : (
+                  <Navigate to="/dashboard" replace />
+                )
+              }
+            />
+            <Route
+              path="/dashboard"
               element={
                 isLoggedIn ? (
                   <motion.div
@@ -188,7 +208,7 @@ function App() {
                     <Dashboard />
                   </motion.div>
                 ) : (
-                  <Navigate to="/login" replace />
+                  <Navigate to="/" replace />
                 )
               }
             />
