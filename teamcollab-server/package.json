@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@mistralai/mistralai": "^1.11.0",
     "bcryptjs": "^3.0.2",
     "cohere-ai": "^7.17.1",
     "cors": "^2.8.5",
@@ -21,7 +22,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.14.1",
     "node-fetch": "^3.3.2",
-    "openai": "^4.97.0"
+    "openai": "^4.97.0",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

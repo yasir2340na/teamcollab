@@ -11,6 +11,9 @@ const authRoutes = require('./routes/auth');
 const testRoutes = require('./routes/test');
 const projectRoutes = require('./routes/projects');
 const taskRoutes = require('./routes/tasks');
+const commentRoutes = require('./routes/comments');
+const activityRoutes = require('./routes/activities');
+const notificationRoutes = require('./routes/notifications');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -41,6 +44,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/test', testRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use('/api/comments', commentRoutes);
+app.use('/api/activities', activityRoutes);
+app.use('/api/notifications', notificationRoutes);
 app.use('/api', aiRoutes);
 
 
@@ -50,6 +56,24 @@ app.get('/', (req, res) => {
 });
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from TeamCollab API' });
+});
+
+// Socket.IO connection handling
+io.on('connection', (socket) => {
+  console.log('🔌 New client connected:', socket.id);
+  
+  socket.on('disconnect', () => {
+    console.log('❌ Client disconnected:', socket.id);
+  });
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error('❌ Error:', err.stack);
+  res.status(err.status || 500).json({
+    message: err.message || 'Internal server error',
+    error: process.env.NODE_ENV === 'development' ? err : {}
+  });
 });
 
 // Start the WebSocket + HTTP server
