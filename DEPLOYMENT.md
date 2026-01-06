@@ -491,7 +491,9 @@ npm run preview
 
 Once deployed, share your app:
 ```
-🌐 Live URL: https://teamcollab.vercel.app
+🌐 Live URL: https://teamcollab-alpha.vercel.app
+🔗 Backend API: https://teamcollab-1-gbpq.onrender.com
+📊 API Test: https://teamcollab-1-gbpq.onrender.com/api/test
 📱 Mobile-friendly: Yes (PWA-ready)
 🔒 Secure: HTTPS enabled
 ⚡ Fast: Global CDN
@@ -505,6 +507,22 @@ Once deployed, share your app:
 4. Implement Phase 3 features
 5. Consider custom domain
 6. Set up analytics
+
+---
+
+## 🔗 Live Deployment URLs
+
+### Production Environment
+- **Frontend (Vercel)**: [https://teamcollab-alpha.vercel.app](https://teamcollab-alpha.vercel.app)
+- **Backend (Render)**: [https://teamcollab-1-gbpq.onrender.com](https://teamcollab-1-gbpq.onrender.com)
+- **API Health Check**: [https://teamcollab-1-gbpq.onrender.com/api/test](https://teamcollab-1-gbpq.onrender.com/api/test)
+- **Database**: MongoDB Atlas (managed cloud)
+
+### Quick Links
+- **Vercel Dashboard**: https://vercel.com/dashboard
+- **Render Dashboard**: https://dashboard.render.com
+- **MongoDB Atlas**: https://cloud.mongodb.com
+- **GitHub Repository**: https://github.com/yasir2340na/teamcollab
 
 ---
 
@@ -592,8 +610,17 @@ services:
 Your TeamCollab app is now live and accessible worldwide! 🚀
 
 **Quick Access:**
-- **Frontend**: https://teamcollab.vercel.app
-- **Backend API**: https://teamcollab-server.onrender.com
+- **Frontend**: [https://teamcollab-alpha.vercel.app](https://teamcollab-alpha.vercel.app)
+- **Backend API**: [https://teamcollab-1-gbpq.onrender.com](https://teamcollab-1-gbpq.onrender.com)
+- **API Test Endpoint**: [https://teamcollab-1-gbpq.onrender.com/api/test](https://teamcollab-1-gbpq.onrender.com/api/test)
 - **Database**: MongoDB Atlas (managed)
+
+### 📱 Share Your App:
+```
+✅ Live Demo: https://teamcollab-alpha.vercel.app
+✅ Sign up and start collaborating!
+✅ Features: AI Tasks, Real-time Updates, Kanban Board
+✅ Free to use - No credit card required
+```
 
 Need help? Check logs in Render/Vercel dashboards or review troubleshooting section above.

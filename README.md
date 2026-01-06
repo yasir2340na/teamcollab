@@ -10,6 +10,14 @@
 
 A beautiful, modern, and feature-rich project management platform with real-time collaboration, AI-powered task suggestions, and an intuitive drag-and-drop interface.
 
+### 🌐 **[LIVE DEMO](https://teamcollab-alpha.vercel.app)** 🌐
+
+[![Deploy Status](https://img.shields.io/badge/Frontend-Live%20on%20Vercel-brightgreen?style=for-the-badge&logo=vercel)](https://teamcollab-alpha.vercel.app)
+[![Deploy Status](https://img.shields.io/badge/Backend-Live%20on%20Render-blue?style=for-the-badge&logo=render)](https://teamcollab-1-gbpq.onrender.com/api/test)
+
+**Frontend:** [https://teamcollab-alpha.vercel.app](https://teamcollab-alpha.vercel.app)  
+**Backend API:** [https://teamcollab-1-gbpq.onrender.com](https://teamcollab-1-gbpq.onrender.com)
+
 [Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [API](#-api-documentation) • [Contributing](#-contributing)
 
 </div>
